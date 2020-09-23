@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Majestic Admin</title>
+  <!-- plugins:css -->
+  <link rel="stylesheet" href="../../vendors/mdi/css/materialdesignicons.min.css">
+  <link rel="stylesheet" href="../../vendors/base/vendor.bundle.base.css">
+  <!-- endinject -->
+  <!-- inject:css -->
+  <link rel="stylesheet" href="../../css/style.css">
+  <!-- endinject -->
+  <link rel="shortcut icon" href="../../images/favicon.png" />
+</head>
+
+<body>
+  <div class="container-scroller">
+    <!-- partial:../../partials/_navbar.html -->
+    <nav class="navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
+      <div class="navbar-brand-wrapper d-flex justify-content-center">
+        <div class="navbar-brand-inner-wrapper d-flex justify-content-between align-items-center w-100">  
+          <a class="navbar-brand brand-logo" href="../../index.html"><img src="../../images/logo.svg" alt="logo"/></a>
+          <a class="navbar-brand brand-logo-mini" href="../../index.html"><img src="../../images/logo-mini.svg" alt="logo"/></a>
+          <button class="navbar-toggler navbar-toggler align-self-center" type="button" data-toggle="minimize">
+            <span class="mdi mdi-sort-variant"></span>
+          </button>
+        </div>  
+      </div>
+      <div class="navbar-menu-wrapper d-flex align-items-center justify-content-end">
+        <ul class="navbar-nav mr-lg-4 w-100">
+          <li class="nav-item nav-search d-none d-lg-block w-100">
+            <div class="input-group">
+              <div class="input-group-prepend">
+                <span class="input-group-text" id="search">
+                  <i class="mdi mdi-magnify"></i>
+                </span>
+              </div>
+              <input type="text" class="form-control" placeholder="Search now" aria-label="search" aria-describedby="search">
+            </div>
+          </li>
+        </ul>
+        <ul class="navbar-nav navbar-nav-right">
+          <li class="nav-item dropdown mr-1">
+            <a class="nav-link count-indicator dropdown-toggle d-flex justify-content-center align-items-center" id="messageDropdown" href="#" data-toggle="dropdown">
+              <i class="mdi mdi-message-text mx-0"></i>
+              <span class="count"></span>
+            </a>
+            <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="messageDropdown">
+              <p class="mb-0 font-weight-normal float-left dropdown-header">Messages</p>
+              <a class="dropdown-item">
+                <div class="item-thumbnail">
+                    <img src="../../images/faces/face4.jpg" alt="image" class="profile-pic">
+                </div>
+                <div class="item-content flex-grow">
+                  <h6 class="ellipsis font-weight-normal">David Grey
+                  </h6>
+                  <p class="font-weight-light small-text text-muted mb-0">
+                    The meeting is cancelled
+                  </p>
+                </div>
+              </a>
+              <a class="dropdown-item">
+                <div class="item-thumbnail">
+                    <img src="../../images/faces/face2.jpg" alt="image" class="profile-pic">
+                </div>
+                <div class="item-content flex-grow">
+                  <h6 class="ellipsis font-weight-normal">Tim Cook
+                  </h6>
+                  <p class="font-weight-light small-text text-muted mb-0">
+                    New product launch
+                  </p>
+                </div>
+              </a>
+              <a class="dropdown-item">
+                <div class="item-thumbnail">
+                    <img src="../../images/faces/face3.jpg" alt="image" class="profile-pic">
+                </div>
+                <div class="item-content flex-grow">
+                  <h6 class="ellipsis font-weight-normal"> Johnson
+                  </h6>
+                  <p class="font-weight-light small-text text-muted mb-0">
+                    Upcoming board meeting
+                  </p>
+                </div>
+              </a>
+            </div>
+          </li>
+          <li class="nav-item dropdown mr-4">
+            <a class="nav-link count-indicator dropdown-toggle d-flex align-items-center justify-content-center notification-dropdown" id="notificationDropdown" href="#" data-toggle="dropdown">
+              <i class="mdi mdi-bell mx-0"></i>
+              <span class="count"></span>
+            </a>
+            <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="notificationDropdown">
+              <p class="mb-0 font-weight-normal float-left dropdown-header">Notifications</p>
+              <a class="dropdown-item">
+                <div class="item-thumbnail">
+                  <div class="item-icon bg-success">
+                    <i class="mdi mdi-information mx-0"></i>
+                  </div>
+                </div>
+                <div class="item-content">
+                  <h6 class="font-weight-normal">Application Error</h6>
+                  <p class="font-weight-light small-text mb-0 text-muted">
+                    Just now
+                  </p>
+                </div>
+              </a>
+              <a class="dropdown-item">
+                <div class="item-thumbnail">
+                  <div class="item-icon bg-warning">
+                    <i class="mdi mdi-settings mx-0"></i>
+                  </div>
+                </div>
+                <div class="item-content">
+                  <h6 class="font-weight-normal">Settings</h6>
+                  <p class="font-weight-light small-text mb-0 text-muted">
+                    Private message
+                  </p>
+                </div>
+              </a>
+              <a class="dropdown-item">
+                <div class="item-thumbnail">
+                  <div class="item-icon bg-info">
+                    <i class="mdi mdi-account-box mx-0"></i>
+                  </div>
+                </div>
+                <div class="item-content">
+                  <h6 class="font-weight-normal">New user registration</h6>
+                  <p class="font-weight-light small-text mb-0 text-muted">
+                    2 days ago
+                  </p>
+                </div>
+              </a>
+            </div>
+          </li>
+          <li class="nav-item nav-profile dropdown">
+            <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" id="profileDropdown">
+              <img src="../../images/faces/face5.jpg" alt="profile"/>
+              <span class="nav-profile-name">Louis Barnett</span>
+            </a>
+            <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="profileDropdown">
+              <a class="dropdown-item">
+                <i class="mdi mdi-settings text-primary"></i>
+                Settings
+              </a>
+              <a class="dropdown-item">
+                <i class="mdi mdi-logout text-primary"></i>
+                Logout
+              </a>
+            </div>
+          </li>
+        </ul>
+        <button class="navbar-toggler navbar-toggler-right d-lg-none align-self-center" type="button" data-toggle="offcanvas">
+          <span class="mdi mdi-menu"></span>
+        </button>
+      </div>
+    </nav>
+    <div>
+      <!-- partial -->
+      <div class="container-fluid">
+        <!-- Small boxes (Stat box) -->
+     
+       
+          <section class="content">
+            <div class="container-fluid">
+              <h5 class="mb-2"></h5>
+              <div class="row">
+                <div class="col-md-12">
+                  <div class="card card-primary">
+                    <div class="card-header">
+                      <h3 class="card-title">Productos</h3>
+    
+                      <div class="card-tools">
+                        <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-minus"></i>
+                        </button>
+                        <button type="button" class="btn btn-tool" data-card-widget="remove"><i
+                            class="fas fa-times"></i></button>
+                      </div>
+                    </div>
+                    <div class="card-body">
+                      <table class="table table-sm">
+                        <thead>
+                          <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Nombre</th>
+                            <th scope="col">Abrevi</th>
+                            <th scope="col">Precio</th>
+                            <th scope="col">Costo</th>
+                            <th scope="col">Descripción</th>
+                            <th scope="col">Proveedor</th>
+                            <th scope="col">Edit</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+    
+                        </tbody>
+                      </table>
+                      <a href="#" id="btncrear">Crear</a>
+                    </div>
+                    <!-- /.card-body -->
+                  </div>
+                </div>
+              </div>
+              <!-- /.row -->
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="card card-danger">
+                    <div class="card-header">
+                    </div>
+                    <div class="card-body">
+                      <!--***********-->
+                      <!--CREAR PRODUCTO-->
+                      <!--***********-->
+                      <div class="row" style="margin-top: 20px;border-top : 1px solid #000000; padding-top:10px">
+                        <div id='conten-crear' class="col-md-6">
+                          <form id="formcrear">
+                            <div class="form-group row">
+                              <label for="inputnombre" class="col-sm-2 col-form-label">Nombre</label>
+                              <div class="col-sm-10">
+                                <input type="text" class="form-control" id="inputnombre">
+                              </div>
+                            </div>
+                            <div class="form-group row">
+                              <label for="inputAbreviatura" class="col-sm-2 col-form-label">Abreviatura</label>
+                              <div class="col-sm-10">
+                                <input type="text" class="form-control" id="inputAbreviatura">
+                              </div>
+                            </div>
+                            <div class="form-group row">
+                              <label for="inputPrecio" class="col-sm-2 col-form-label">Precio</label>
+                              <div class="col-sm-10">
+                                <input type="text" class="form-control" id="inputPrecio">
+                              </div>
+                            </div>
+                            <div class="form-group row">
+                              <label for="inputCosto" class="col-sm-2 col-form-label">Costo</label>
+                              <div class="col-sm-10">
+                                <input type="text" class="form-control" id="inputCosto">
+                              </div>
+                            </div>
+                            <div class="form-group row">
+                              <label for="inputDescripcion" class="col-sm-2 col-form-label">Descripción</label>
+                              <div class="col-sm-10">
+                                <input type="text" class="form-control" id="inputDescripcion">
+                              </div>
+                            </div>
+                            <div class="form-group row">
+                              <label for="inputProveedor" class="col-sm-2 col-form-label">Proveedor</label>
+                              <div class="col-sm-10">
+                                <input type="text" class="form-control" id="inputProveedor">
+                              </div>
+                            </div>
+                            <input type="submit" class='btn btn-primary' value="Guardar" id="btnGuardarcrear">
+                            <a href="#" id="btncancel">Cancelar</a>
+                          </form>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- /.card-body -->
+                  </div>
+                  <!-- /.card -->
+                </div>
+                <!-- /.row -->
+                <!-- =========================================================== -->
+                <div class="col-md-6">
+                  <!-- LINE CHART -->
+                  <div class="card card-info">
+                    <div class="card-header"></div>
+                    </div>
+                    <div class="card-body">
+                     <!--***********-->
+                        <!--EDITAR PRODUCTO-->
+                        <!--***********-->
+                        <div class="row">
+                          <div id='conten-editar' class="col-12">
+                            <h3>Editar producto</h3>
+                            <form id="formEditar">
+                              <div class="form-group row">
+                                <label for="inputnombreEdit" class="col-sm-2 col-form-label">Nombre</label>
+                                <div class="col-sm-10">
+                                  <input type="text" class="form-control" id="inputnombreEdit">
+                                </div>
+                              </div>
+                              <div class="form-group row">
+                                <label for="inputAbreviaturaEdit" class="col-sm-2 col-form-label">Abreviatura</label>
+                                <div class="col-sm-10">
+                                  <input type="text" class="form-control" id="inputAbreviaturaEdit">
+                                </div>
+                              </div>
+                              <div class="form-group row">
+                                <label for="inputPrecioEdit" class="col-sm-2 col-form-label">Precio</label>
+                                <div class="col-sm-10">
+                                  <input type="text" class="form-control" id="inputPrecioEdit">
+                                </div>
+                              </div>
+                              <div class="form-group row">
+                                <label for="inputCostoEdit" class="col-sm-2 col-form-label">Costo</label>
+                                <div class="col-sm-10">
+                                  <input type="text" class="form-control" id="inputCostoEdit">
+                                </div>
+                              </div>
+                              <div class="form-group row">
+                                <label for="inputDescripcionEdit" class="col-sm-2 col-form-label">Descripción</label>
+                                <div class="col-sm-10">
+                                  <input type="text" class="form-control" id="inputDescripcionEdit">
+                                </div>
+                              </div>
+                              <div class="form-group row">
+                                <label for="inputProveedorEdit" class="col-sm-2 col-form-label">Proveedor</label>
+                                <div class="col-sm-10">
+                                  <input type="text" class="form-control" id="inputProveedorEdit">
+                                </div>
+                              </div>
+                              <input type="submit" class='btn btn-primary' value="Guardar cambios" id="btnGuardarEdicion">
+                              <a href="#" id="btncancelEdit">Cancelar</a>
+                            </form>
+                          </div>
+                        </div>
+                    <!-- /.card-body -->
+                  </div>
+                  <!-- /.card -->
+                </div>
+              </div>
+              <!-- ./wrapper -->
+              <!-- /.content -->
+    
+              <a id="back-to-top" href="#" class="btn btn-primary back-to-top" role="button" aria-label="Scroll to top">
+                <i class="fas fa-chevron-up"></i>
+              </a>
+            </div>
+    
+            </div>
+          </section>
+         
+        
+        <!-- /.row (main row) -->
+      </div>
+      <!-- main-panel ends -->
+    </div>
+    <!-- page-body-wrapper ends -->
+  </div>
+  <!-- container-scroller -->
+  <!-- plugins:js -->
+  <script src="../../vendors/base/vendor.bundle.base.js"></script>
+  <!-- endinject -->
+  <!-- Plugin js for this page-->
+  <!-- End plugin js for this page-->
+  <!-- inject:js -->
+  <script src="../../js/off-canvas.js"></script>
+  <script src="../../js/hoverable-collapse.js"></script>
+  <script src="../../js/template.js"></script>
+  <!-- endinject -->
+  <!-- Custom js for this page-->
+  <!-- End custom js for this page-->
+
+  <script src="../../js/ConexionServ.js"></script>
+  <script src="productos.js"></script>
+</body>
+
+</html>
