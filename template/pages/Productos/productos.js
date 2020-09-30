@@ -49,7 +49,7 @@ $(document).ready(
                                 <a href='#' class='btn btn-info btn-sm editar'>\
                                     <i class='fa fa-pen'></i>\
                                 </a>\
-                            </div>\
+                             </div>\
                         </td>\
                     <tr>"
                 );
@@ -94,6 +94,8 @@ $(document).ready(
             sql = 'UPDATE productos SET nombre=?,abreviatura=?,precio=?,costo=?,descripcion=?,proveedor=? WHERE rowid=? ';
 
             window.query(sql, [a, b, c, d, e, f,fila_editantdo.data('id')]).then(function (result) {
+
+                toastr.success('Producto editado ')
 
                 fila_editantdo.find('.td-nombre').text(a);
                 fila_editantdo.find('.td-abreviatura').text(b);
@@ -141,7 +143,8 @@ $(document).ready(
             sql = 'INSERT INTO productos(nombre,abreviatura,precio,costo,descripcion,proveedor)VALUES(?,?,?,?,?,?)';
 
             window.query(sql, [a, b, c, d, e, f]).then(function (result) {
-                alert('Producto creado con éxito')
+               
+                toastr.success('Producto creado ')
 
                 $('table tbody').append(
                     "<tr id='fila-" + result.insertId + "'data-id='" + result.insertId + "'>\

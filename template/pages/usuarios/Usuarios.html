@@ -12,6 +12,7 @@
   <!-- endinject -->
   <!-- inject:css -->
   <link rel="stylesheet" href="../../css/style.css">
+  <link rel="stylesheet" href="../../css/toastr.css">
   <!-- endinject -->
   <link rel="shortcut icon" href="../../images/favicon.png" />
   <link rel="stylesheet" href="../../css/fontawesome-free/css/all.min.css">
@@ -172,9 +173,7 @@
 
       <div class="main-panel">
         <div class="container-fluid">
-          <div class="row">
-            <div class="col-md-12">
-              <!-- AREA CHART -->
+            <div class="content-wrapper">
               <div class="card card-primary">
                 <div class="card-header">
                   <h3 class="card-title">Usuarios</h3>
@@ -186,7 +185,9 @@
                         <th scope="col">#</th>
                         <th scope="col">Nombre</th>
                         <th scope="col">Sexo</th>
+                        <th scope="col">Fecha de Nacimiento</th>
                         <th scope="col">Tipo</th>
+                        <th scope="col">Documento</th>
                         <th scope="col">Usuario</th>
                         <th scope="col">Edit</th>
                       </tr>
@@ -201,105 +202,159 @@
               </div>
               <!-- /.card -->
             </div>
-          </div>
           
-          <div class="row">
-            <div class="col-md-6">
-              <!-- DONUT CHART -->
               <div class="card card-danger" id='conten-crear'>
                 <div class="card-body">
-                  <!--***********-->
-                  <!--CREAR USUARIO-->
-                  <!--***********-->
                   <div class="row">
+                    <h3>Crear Usuario</h3>
+
                       <div  class="col-12" >
-                        <form id="formcrear">
+                        <form class="forms-sample" id="formcrear">
                             <div class="form-group row">
-                              <label for="inputnombre" class="col-sm-2 col-form-label">Nombre</label>
+                              <label  class="col-sm-2 col-form-label">Nombre</label>
                               <div class="col-sm-10">
                                 <input type="text"  class="form-control" id="inputnombre" >
                               </div>
                             </div>
+
                             <div class="form-group row">
-                              <label for="inputsexo" class="col-sm-2 col-form-label">Sexo</label>
+                              <label  class="col-sm-2 col-form-label">Apelldios</label>
                               <div class="col-sm-10">
-                                <input type="text" class="form-control" id="inputsexo">
+                                <input type="text"  class="form-control" id="inputapellidos" >
                               </div>
                             </div>
+
                             <div class="form-group row">
-                              <label for="inputtipo" class="col-sm-2 col-form-label">Tipo</label>
+                              <div >
+                                <label  class="col-form-label">Sexo</label>
+                                    <select  class="form-control" id="inputsexo">
+                                      <option id="Masculino">Masculino</option>
+                                      <option id="Femenino">Femenino</option>
+                                      <option id="Otro">Otro</option>
+  
+                                    </select>
+                              </div>
+                            </div>
+                          
+                            <div class="form-group row">
+                              <label  class="col-sm-2 col-form-label">Fecha Nacimiento</label>
+                              <div class="col-sm-10">
+                                <input type="date" class="form-control" id="inputfecha_nac">
+                              </div>
+                            </div>
+
+                            <div class="form-group row">
+                              <label  class="col-sm-2 col-form-label">Documento</label>
+                              <div class="col-sm-10">
+                                <input type="number" class="form-control" id="inputdocumento">
+                              </div>
+                            </div>
+
+                            <div class="form-group row">
+                              <label  class="col-sm-2 col-form-label">Tipo</label>
                               <div class="col-sm-10">
                                 <input type="text" class="form-control" id="inputtipo">
                               </div>
                             </div>
+
+                           
+
                             <div class="form-group row">
-                              <label for="inputusuario" class="col-sm-2 col-form-label">Usuario</label>
+                              <label  class="col-sm-2 col-form-label">Usuario</label>
                               <div class="col-sm-10">
                                 <input type="text" class="form-control" id="inputusuario">
                               </div>
                             </div>
-                            <input type="submit" class='btn btn-primary' value="Guardar" id="btnGuardarcrear" >
-                            <a href="#" id="btncancel">Cancelar</a>
+                            <input type="submit" class='btn btn-primary' value="Guardar" >
+                            <a  id="btncancel">Cancelar</a>
                           </form> 
                       </div>
+
                   </div>
                 </div>
-                <!-- /.card-body -->
               </div>
-              <!-- /.card -->
       
-            </div>
+              <br>
             <!-- /.col (LEFT) -->
-            <div class="col-md-6">
+            <div >
               <!-- LINE CHART -->
-              <div class="card card-info"id='conten-editar'>
+              <div class="card card-info" id='conten-editar'>
                 <div class="card-header">
-                  <h3 class="card-title">Editar</h3>
       
-                  <div class="card-tools">
-                    <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-minus"></i>
-                    </button>
-                    <button type="button" class="btn btn-tool" data-card-widget="remove"><i class="fas fa-times"></i></button>
-                  </div>
                 </div>
                 <div class="card-body">
                  
                   <!--***********-->
                   <!--EDITAR USUARIO-->
                   <!--***********-->
-                  <div class="row">
-                    <div  class="col-12" >
-                    <h3>Editar Usuario</h3>
-                    <form id="formEditar">
-                        <div class="form-group row">
-                          <label for="inputnombreEdit" class="col-sm-2 col-form-label">Nombre</label>
-                          <div class="col-sm-10">
-                            <input type="text"  class="form-control" id="inputnombreEdit" >
+
+                  <br>
+                  
+                    <div class="row">
+                      <h3>Editar Usuario</h3>
+                      
+                      <div id="formEditar" class="col-12" >
+                        <form >
+
+                          <div class="form-group row">
+                            <label for="inputnombreEdit" class="col-form-label">Nombre</label>
+                            <div class="col-sm-10">
+                              <input type="text"  class="form-control" id="inputnombreEdit" >
+                            </div>
                           </div>
-                        </div>
-                        <div class="form-group row">
-                          <label for="inputsexoEdit" class="col-sm-2 col-form-label">Sexo</label>
-                          <div class="col-sm-10">
-                            <input type="text" class="form-control" id="inputsexoEdit">
+
+                          <div class="form-group row">
+                            <label for="inputnombreEdit" class="col-form-label">Apelldios</label>
+                            <div class="col-sm-10">
+                              <input type="text"  class="form-control" id="inputapelldoEdit" >
+                            </div>
                           </div>
-                        </div>
-                        <div class="form-group row">
-                          <label for="inputtipoEdit" class="col-sm-2 col-form-label">Tipo</label>
-                          <div class="col-sm-10">
-                            <input type="text" class="form-control" id="inputtipoEdit">
+
+                          <div class="form-group row">
+                            <label  class="col-form-label">Sexo</label>
+                            <div >
+                                  <select  class="form-control" id="inputsexoEdit">
+                                    <option id="Masculino">Masculino</option>
+                                    <option id="Femenino">Femenino</option>
+                                    <option id="Otro">Otro</option>
+
+                                  </select>
+                            </div>
                           </div>
-                        </div>
-                        <div class="form-group row">
-                          <label for="inputusuarioEdit" class="col-sm-2 col-form-label">Usuario</label>
-                          <div class="col-sm-10">
-                            <input type="text" class="form-control" id="inputusuarioEdit">
+
+                          <div class="form-group row">
+                            <label  class="col-sm-2 col-form-label">Fecha Nacimiento</label>
+                            <div class="col-sm-10">
+                              <input type="date" class="form-control" id="inputfecha_nacEdit">
+                            </div>
                           </div>
-                        </div>
-                        <input type="submit" class='btn btn-primary' value="Guardar cambios" id="btnGuardarEdicion" >
-                        <a href="#" id="btncancelEdit">Cancelar</a>
-                      </form> 
+
+                          <div class="form-group row">
+                            <label for="inputtipoEdit" class=" col-form-label">Tipo</label>
+                            <div class="col-sm-10">
+                              <input type="text" class="form-control" id="inputtipoEdit">
+                            </div>
+                          </div>
+
+                          <div class="form-group row">
+                            <label  class="col-sm-2 col-form-label">Documento</label>
+                            <div class="col-sm-10">
+                              <input type="number" class="form-control" id="inputdocumentoEdit">
+                            </div>
+                          </div>
+                          <div class="form-group row">
+                            <label for="inputusuarioEdit" class=" col-form-label">Usuario</label>
+                            <div class="col-sm-10">
+                              <input type="text" class="form-control" id="inputusuarioEdit">
+                            </div>
+                          </div>
+                          <input type="submit" class='btn btn-primary' value="Guardar cambios" id="btnGuardarEdicion" >
+                          <a href="#" id="btncancelEdit">Cancelar</a>
+                        </form> 
+                      </div>
+
+                      
                     </div>
-                  </div>
                 </div>
                 <!-- /.card-body -->
               </div>
@@ -311,14 +366,8 @@
         </div>
         <!-- content-wrapper ends -->
         <!-- partial:../../partials/_footer.html -->
-        <footer class="footer">
-          <div class="d-sm-flex justify-content-center justify-content-sm-between">
-            <span class="text-muted text-center text-sm-left d-block d-sm-inline-block">Copyright © 2018 <a
-                href="https://www.bootstrapdash.com/" target="_blank">Bootstrapdash</a>. All rights reserved.</span>
-            <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center">Hand-crafted & made with <i
-                class="mdi mdi-heart text-danger"></i></span>
-          </div>
-        </footer>
+
+
         <!-- partial -->
       </div>
       <!-- main-panel ends -->
@@ -329,6 +378,7 @@
   <!-- plugins:js -->
   <script src="../../vendors/base/vendor.bundle.base.js"></script>
   <!-- endinject -->
+  <script src="../../js/toastr.js"></script>
   <!-- Plugin js for this page-->
   <script src="../../vendors/chart.js/Chart.min.js"></script>
   <!-- End plugin js for this page-->
@@ -342,7 +392,6 @@
   <!-- End custom js for this page-->
 
   <script src="../contenidos/menu.js"></script>
-
   <script src="../../js/ConexionServ.js"></script>
   <script src="usuarios.js"></script>
 

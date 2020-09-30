@@ -12,6 +12,9 @@
   <!-- endinject -->
   <!-- inject:css -->
   <link rel="stylesheet" href="../../css/style.css">
+  <link rel="stylesheet" href="../../css/fontawesome-free/css/all.min.css">
+  <link rel="stylesheet" href="../../css/toastr.css">
+
   <!-- endinject -->
   <link rel="shortcut icon" href="../../images/favicon.png" />
 </head>
@@ -158,110 +161,36 @@
         </button>
       </div>
     </nav>
-    <!-- partial -->
-    <div class="container-fluid page-body-wrapper">
-      <!-- partial:../../partials/_sidebar.html -->
-      <nav class="sidebar sidebar-offcanvas" id="sidebar">
-        <ul class="nav">
-          <li class="nav-item">
-            <a class="nav-link" href="../../index.html">
-              <i class="mdi mdi-home menu-icon"></i>
-              <span class="menu-title">Dashboard</span>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" data-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
-              <i class="mdi mdi-circle-outline menu-icon"></i>
-              <span class="menu-title">UI Elements</span>
-              <i class="menu-arrow"></i>
-            </a>
-            <div class="collapse" id="ui-basic">
-              <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="../../pages/ui-features/buttons.html">Buttons</a></li>
-                <li class="nav-item"> <a class="nav-link" href="../../pages/ui-features/typography.html">Typography</a></li>
-              </ul>
-            </div>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="../../pages/forms/basic_elements.html">
-              <i class="mdi mdi-view-headline menu-icon"></i>
-              <span class="menu-title">Form elements</span>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="../usuarios/Usuarios.html">
-              <i class="mdi mdi-chart-pie menu-icon"></i>
-              <span class="menu-title">Usuarios</span>
-            </a>
-          </li>
-          <li class="nav-item active">
-            <a class="nav-link" href="../../pages/tables/basic-table.html">
-              <i class="mdi mdi-grid-large menu-icon"></i>
-              <span class="menu-title">Productos</span>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="../../pages/icons/mdi.html">
-              <i class="mdi mdi-emoticon menu-icon"></i>
-              <span class="menu-title">Icons</span>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" data-toggle="collapse" href="#auth" aria-expanded="false" aria-controls="auth">
-              <i class="mdi mdi-account menu-icon"></i>
-              <span class="menu-title">User Pages</span>
-              <i class="menu-arrow"></i>
-            </a>
-            <div class="collapse" id="auth">
-              <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="../../pages/samples/login.html"> Login </a></li>
-                <li class="nav-item"> <a class="nav-link" href="../../pages/samples/login-2.html"> Login 2 </a></li>
-                <li class="nav-item"> <a class="nav-link" href="../../pages/samples/register.html"> Register </a></li>
-                <li class="nav-item"> <a class="nav-link" href="../../pages/samples/register-2.html"> Register 2 </a></li>
-                <li class="nav-item"> <a class="nav-link" href="../../pages/samples/lock-screen.html"> Lockscreen </a></li>
-              </ul>
-            </div>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="../../documentation/documentation.html">
-              <i class="mdi mdi-file-document-box-outline menu-icon"></i>
-              <span class="menu-title">Documentation</span>
-            </a>
-          </li>
-        </ul>
-      </nav>
+    <div>
       <!-- partial -->
-      <div class="container-fluid">
+      <div class="container-fluid  page-body-wrapper">
         <!-- Small boxes (Stat box) -->
-     
+        
+        <div data-include="../contenidos/menu"></div>
        
           <section class="content">
             <div class="container-fluid">
-              <h5 class="mb-2"></h5>
               <div class="row">
-                <div class="col-md-12">
+                <div class="content-wrapper" >
                   <div class="card card-primary">
                     <div class="card-header">
                       <h3 class="card-title">Productos</h3>
     
-                      <div class="card-tools">
-                        <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-minus"></i>
-                        </button>
-                        <button type="button" class="btn btn-tool" data-card-widget="remove"><i
-                            class="fas fa-times"></i></button>
-                      </div>
+                      
                     </div>
                     <div class="card-body">
-                      <table class="table table-sm">
+
+
+                      <table class="table ">
                         <thead>
                           <tr>
                             <th scope="col">#</th>
-                            <th scope="col">Nombre</th>
-                            <th scope="col">Abrevi</th>
-                            <th scope="col">Precio</th>
-                            <th scope="col">Costo</th>
-                            <th scope="col">Descripción</th>
-                            <th scope="col">Proveedor</th>
+                            <th scope="col">Nombres</th>
+                            <th scope="col">Apellidos</th>
+                            <th scope="col">Sexo</th>
+                            <th scope="col">Documento</th>
+                            <th scope="col">Acudiente</th>
+                            <th scope="col">Telefono</th>
                             <th scope="col">Edit</th>
                           </tr>
                         </thead>
@@ -269,6 +198,8 @@
     
                         </tbody>
                       </table>
+
+
                       <a href="#" id="btncrear">Crear</a>
                     </div>
                     <!-- /.card-body -->
@@ -276,52 +207,62 @@
                 </div>
               </div>
               <!-- /.row -->
-              <div class="row">
-                <div class="col-md-6">
+
+              <br>
+
                   <div class="card card-danger">
-                    <div class="card-header">
-                    </div>
                     <div class="card-body">
                       <!--***********-->
                       <!--CREAR PRODUCTO-->
                       <!--***********-->
-                      <div class="row" style="margin-top: 20px;border-top : 1px solid #000000; padding-top:10px">
-                        <div id='conten-crear' class="col-md-6">
-                          <form id="formcrear">
+                      <br>
+                      <div class="row" id='conten-crear'>
+                        <div  >
+                          <h3>Agregar cliente</h3>
+                          <form class="forms-sample" id="formcrear">
                             <div class="form-group row">
-                              <label for="inputnombre" class="col-sm-2 col-form-label">Nombre</label>
-                              <div class="col-sm-10">
+                              <label for="inputnombre" class="col-form-label">Nombres</label>
+                              <div>
                                 <input type="text" class="form-control" id="inputnombre">
                               </div>
                             </div>
                             <div class="form-group row">
-                              <label for="inputAbreviatura" class="col-sm-2 col-form-label">Abreviatura</label>
-                              <div class="col-sm-10">
-                                <input type="text" class="form-control" id="inputAbreviatura">
+                              <label for="inputAbreviatura" class="col-form-label">Apellidos</label>
+                              <div >
+                                <input type="text" class="form-control" id="inputapellidos">
+                              </div>
+                            </div>
+
+
+                            <div class="form-group row">
+                              <div >
+                                <label  class="col-form-label">Sexo</label>
+                                    <select  class="form-control" id="inputsexo">
+                                      <option id="Masculino">Masculino</option>
+                                      <option id="Femenino">Femenino</option>
+                                      <option id="Otro">Otro</option>
+  
+                                    </select>
+                              </div>
+                            </div>
+
+
+                            <div class="form-group row">
+                              <label for="inputCosto" class="col-form-label">Documento</label>
+                              <div >
+                                <input type="text" class="form-control" id="inputdocumento">
                               </div>
                             </div>
                             <div class="form-group row">
-                              <label for="inputPrecio" class="col-sm-2 col-form-label">Precio</label>
-                              <div class="col-sm-10">
-                                <input type="text" class="form-control" id="inputPrecio">
+                              <label for="inputDescripcion" class="col-form-label">Acudiente</label>
+                              <div >
+                                <input type="text" class="form-control" id="inputacudiente">
                               </div>
                             </div>
                             <div class="form-group row">
-                              <label for="inputCosto" class="col-sm-2 col-form-label">Costo</label>
-                              <div class="col-sm-10">
-                                <input type="text" class="form-control" id="inputCosto">
-                              </div>
-                            </div>
-                            <div class="form-group row">
-                              <label for="inputDescripcion" class="col-sm-2 col-form-label">Descripción</label>
-                              <div class="col-sm-10">
-                                <input type="text" class="form-control" id="inputDescripcion">
-                              </div>
-                            </div>
-                            <div class="form-group row">
-                              <label for="inputProveedor" class="col-sm-2 col-form-label">Proveedor</label>
-                              <div class="col-sm-10">
-                                <input type="text" class="form-control" id="inputProveedor">
+                              <label for="inputProveedor" class="col-form-label">Telefono</label>
+                              <div >
+                                <input type="number" class="form-control" id="inputtelefono">
                               </div>
                             </div>
                             <input type="submit" class='btn btn-primary' value="Guardar" id="btnGuardarcrear">
@@ -333,56 +274,63 @@
                     <!-- /.card-body -->
                   </div>
                   <!-- /.card -->
-                </div>
                 <!-- /.row -->
                 <!-- =========================================================== -->
-                <div class="col-md-6">
+                <br>
+
+                <div >
                   <!-- LINE CHART -->
-                  <div class="card card-info">
-                    <div class="card-header"></div>
-                    </div>
+                  <div class="card card-info" id='conten-editar'>
+                    
                     <div class="card-body">
                      <!--***********-->
                         <!--EDITAR PRODUCTO-->
                         <!--***********-->
-                        <div class="row">
-                          <div id='conten-editar' class="col-12">
-                            <h3>Editar producto</h3>
+                        <div class="content-wrapper">
+                          <div id='conten-editar'>
+                            <h3>Editar cliente</h3>
                             <form id="formEditar">
                               <div class="form-group row">
-                                <label for="inputnombreEdit" class="col-sm-2 col-form-label">Nombre</label>
+                                <label for="inputnombreEdit" class="col-sm-2 col-form-label">Nombres</label>
                                 <div class="col-sm-10">
                                   <input type="text" class="form-control" id="inputnombreEdit">
                                 </div>
                               </div>
                               <div class="form-group row">
-                                <label for="inputAbreviaturaEdit" class="col-sm-2 col-form-label">Abreviatura</label>
+                                <label for="inputAbreviaturaEdit" class="col-sm-2 col-form-label">Apellidos</label>
                                 <div class="col-sm-10">
-                                  <input type="text" class="form-control" id="inputAbreviaturaEdit">
+                                  <input type="text" class="form-control" id="inputapellidosEdit">
+                                </div>
+                              </div>
+
+                              <div class="form-group row">
+                                <label  class="col-form-label">Sexo</label>
+                                <div >
+                                      <select  class="form-control" id="inputsexoEdit">
+                                        <option id="Masculino">Masculino</option>
+                                        <option id="Femenino">Femenino</option>
+                                        <option id="Otro">Otro</option>
+    
+                                      </select>
+                                </div>
+                              </div>
+
+                              <div class="form-group row">
+                                <label for="inputCostoEdit" class="col-sm-2 col-form-label">Documento</label>
+                                <div class="col-sm-10">
+                                  <input type="text" class="form-control" id="inputdocumentoEdit">
                                 </div>
                               </div>
                               <div class="form-group row">
-                                <label for="inputPrecioEdit" class="col-sm-2 col-form-label">Precio</label>
+                                <label for="inputDescripcionEdit" class="col-sm-2 col-form-label">Acudiente</label>
                                 <div class="col-sm-10">
-                                  <input type="text" class="form-control" id="inputPrecioEdit">
+                                  <input type="text" class="form-control" id="inputacudienteEdit">
                                 </div>
                               </div>
                               <div class="form-group row">
-                                <label for="inputCostoEdit" class="col-sm-2 col-form-label">Costo</label>
+                                <label for="inputProveedorEdit" class="col-sm-2 col-form-label">Telefono</label>
                                 <div class="col-sm-10">
-                                  <input type="text" class="form-control" id="inputCostoEdit">
-                                </div>
-                              </div>
-                              <div class="form-group row">
-                                <label for="inputDescripcionEdit" class="col-sm-2 col-form-label">Descripción</label>
-                                <div class="col-sm-10">
-                                  <input type="text" class="form-control" id="inputDescripcionEdit">
-                                </div>
-                              </div>
-                              <div class="form-group row">
-                                <label for="inputProveedorEdit" class="col-sm-2 col-form-label">Proveedor</label>
-                                <div class="col-sm-10">
-                                  <input type="text" class="form-control" id="inputProveedorEdit">
+                                  <input type="number" class="form-control" id="inputtelefonoEdit">
                                 </div>
                               </div>
                               <input type="submit" class='btn btn-primary' value="Guardar cambios" id="btnGuardarEdicion">
@@ -396,12 +344,7 @@
                 </div>
               </div>
               <!-- ./wrapper -->
-              <!-- /.content -->
-    
-              <a id="back-to-top" href="#" class="btn btn-primary back-to-top" role="button" aria-label="Scroll to top">
-                <i class="fas fa-chevron-up"></i>
-              </a>
-            </div>
+            
     
             </div>
           </section>
@@ -420,13 +363,18 @@
   <!-- Plugin js for this page-->
   <!-- End plugin js for this page-->
   <!-- inject:js -->
+  <script src="../../js/toastr.js"></script>
+
   <script src="../../js/off-canvas.js"></script>
   <script src="../../js/hoverable-collapse.js"></script>
   <script src="../../js/template.js"></script>
+
+  <script src="../../js/toastr.js"></script>
+
   <!-- endinject -->
   <!-- Custom js for this page-->
   <!-- End custom js for this page-->
-
+  <script src="../contenidos/menu.js"></script>
   <script src="../../js/ConexionServ.js"></script>
   <script src="clientes.js"></script>
 </body>

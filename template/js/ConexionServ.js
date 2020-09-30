@@ -9,7 +9,7 @@ window.crearBaseDatos = function () {
     sqlUsers = "CREATE TABLE IF NOT EXISTS users (id integer," +
         "nombres varchar(100)  NOT NULL collate nocase," +
         "apellidos varchar(100)  DEFAULT NULL collate nocase," +
-        "sexo varchar(1)  NOT NULL," +
+        "sexo varchar(10) DEFAULT NULL collate nocase," +
         "fecha_nac date DEFAULT NULL," +
         "documento varchar(100) DEFAULT NULL collate nocase,"+
         "tipo varchar(100)  NOT NULL collate nocase," + 

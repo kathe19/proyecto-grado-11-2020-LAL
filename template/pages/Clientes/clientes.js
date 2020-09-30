@@ -98,6 +98,9 @@ $(document).ready(
 
             window.query(sql, [a, b, c, d, e, f,fila_editantdo.data('id')]).then(function (result) {
 
+                toastr.success('Cliente creado ')
+
+
                 fila_editantdo.find('.td-nombre').text(a);
                 fila_editantdo.find('.td-apellidos').text(b);
                 fila_editantdo.find('.td-sexo').text(c);
@@ -152,7 +155,7 @@ $(document).ready(
             sql = 'INSERT INTO clientes(nombres,apellidos,sexo,documento,acudiente,telefono)VALUES(?,?,?,?,?,?)';
 
             window.query(sql, [a, b, c, d,e,f]).then(function (result) {
-                alert('Usuario creado con éxito')
+                toastr.success('Cliente creado ')
                 console.log('Dato ingresado', result);
 
                 $('table tbody').append(

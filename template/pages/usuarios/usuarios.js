@@ -37,7 +37,9 @@ $(document).ready(
                         <th>"+ u['rowid'] + "</th>\
                         <td class='td-nombre'>"+ u['nombres'] + "</td>\
                         <td class='td-sexo'>"+ u['sexo'] + "</td>\
+                        <td class='td-fecha_nac'>"+ u['fecha_nac'] + "</td>\
                         <td class='td-tipo'>"+ u['tipo'] + "</td>\
+                        <td class='td-documento'>"+ u['documento'] + "</td>\
                         <td class='td-usuario'>"+ u['usuario'] + "</td>\
                         <td>\
                             <div class='btn-group'>\
@@ -76,22 +78,30 @@ $(document).ready(
             $('#conten-editar').show('fast');
         })
         
+
+        
         $('#formEditar').submit(function () {
+
             a = $('#inputnombreEdit').val();
-            b = $('#inputsexoEdit').val();
-            c = $('#inputtipoEdit').val();
-            d = $('#inputusuarioEdit').val();
-
+            b = $('#inputapelldoEdit').val();
+            c = $('#inputsexoEdit').val();
+            d = $('#inputfecha_nacEdit').val();
+            e = $('#inputtipoEdit').val();
+            f = $('#inputdocumentoEdit').val();
+            g = $('#inputusuarioEdit').val();
             
+            sql = 'UPDATE users SET nombres=?, apellidos=?,sexo=?,fecha_nac=?, tipo=?, documento=?,usuario=? WHERE rowid=? ';
 
-            sql = 'UPDATE users SET nombres=?,sexo=?,tipo=?,usuario=? WHERE rowid=? ';
+            window.query(sql, [a, b, c, d,e,f,g,fila_editantdo.data('id')]).then(function (result) {
 
-            window.query(sql, [a, b, c, d,fila_editantdo.data('id')]).then(function (result) {
+                toastr.success('Usuario editado ')
 
                 fila_editantdo.find('.td-nombre').text(a);
-                fila_editantdo.find('.td-sexo').text(b);
-                fila_editantdo.find('.td-tipo').text(c);
-                fila_editantdo.find('.td-usuario').text(d);
+                fila_editantdo.find('.td-sexo').text(c);
+                fila_editantdo.find('.td-fecha_nac').text(d);
+                fila_editantdo.find('.td-tipo').text(e);
+                fila_editantdo.find('.td-documento').text(f);
+                fila_editantdo.find('.td-usuario').text(g);
 
                 $('#conten-editar').hide();
                 
@@ -102,6 +112,8 @@ $(document).ready(
 
             Event.preventDefault();
         }) 
+
+
 
         $('#btncancelEdit').click(
             function () {
@@ -124,26 +136,36 @@ $(document).ready(
                 $('#btncrear').show();
             }
         )
+
+
+        
         $('#formcrear').submit(function () {
             a = $('#inputnombre').val();
-            b = $('#inputsexo').val();
-            c = $('#inputtipo').val();
-            d = $('#inputusuario').val();
+            b = $('#inputapellidos').val();
+            c = $('#inputsexo').val();
+            d = $('#inputfecha_nac').val();
+            e = $('#inputtipo').val();
+            f = $('#inputdocumento').val();
+            g = $('#inputusuario').val();
 
 
-            sql = 'INSERT INTO users(nombres,sexo,tipo,usuario)VALUES(?,?,?,?)';
+            sql = 'INSERT INTO users(nombres,apellidos,sexo,fecha_nac,documento,tipo,usuario)VALUES(?,?,?,?,?,?,?)';
 
-            window.query(sql, [a, b, c, d]).then(function (result) {
-                alert('Usuario creado con éxito')
+            window.query(sql, [a, b, c, d,e,f,g]).then(function (result) {
+
+                toastr.success('Usuario creado ')
+
                 console.log('Dato ingresado', result);
 
                 $('table tbody').append(
                     "<tr id='fila-" + result.insertId + "'data-id='" + result.insertId + "'>\
                         <th>"+ result.insertId + "</th>\
                         <td class='td-nombre'>"+ a + "</td>\
-                        <td class='td-sexo'>"+ b + "</td>\
-                        <td class='td-tipo'>"+ c + "</td>\
-                        <td class='td-usuario'>"+ d + "</td>\
+                        <td class='td-sexo'>"+ c + "</td>\
+                        <td class='td-fecha_nac'>"+ d + "</td>\
+                        <td class='td-tipo'>"+ e + "</td>\
+                        <td class='td-documento'>"+ f + "</td>\
+                        <td class='td-usuario'>"+ g + "</td>\
                         <td>\
                             <div class='btn-group'>\
                                 <a href='#' class='btn btn-danger btn-sm eliminar'>\
