@@ -19,7 +19,7 @@ window.crearBaseDatos = function () {
     sqlCliente = "CREATE TABLE IF NOT EXISTS clientes (id integer," +
         "nombres varchar(100)  NOT NULL collate nocase," +
         "apellidos varchar(100)  DEFAULT NULL collate nocase," +
-        "sexo varchar(1)  NOT NULL," +
+        "sexo varchar(10)  DEFAULT NULL collate nocase," +
         "documento varchar(100) DEFAULT NULL collate nocase,"+ 
         "acudiente varchar(255)  DEFAULT NULL collate nocase,"+
         "telefono varchar(200)  DEFAULT NULL collate nocase)";

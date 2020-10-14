@@ -1,7 +1,6 @@
 window.crearBaseDatos();
 $(document).ready(
     function () {
-        $('#conten-crear').hide();
         $('#conten-editar').hide();
 
         $('table').on('click', '.eliminar', function () {
@@ -107,8 +106,6 @@ $(document).ready(
                 fila_editantdo.find('.td-proveedor').text(f);
 
                 $('#conten-editar').hide();
-                event.preventDefault();
-
                 
             }, function (error) {
                 console.log('Dato ingresado', error);

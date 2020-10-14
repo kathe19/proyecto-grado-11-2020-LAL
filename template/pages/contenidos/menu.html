@@ -1,13 +1,62 @@
-<link rel="stylesheet" href="../../plusgins/fontawesome-free/css/all.min.css">
-<!-- Ionicons -->
-<link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
-<!-- Theme style -->
-<link rel="stylesheet" href="../../dist/css/adminlte.min.css">
-<!-- Google Font: Source Sans Pro -->
-<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Kathe Florez</title>
+
+
+  <link rel="shortcut icon" href="../../images/k.png" />
+
+  <!-- plugins:css -->
+  <link rel="stylesheet" href="../../plusgins/fontawesome-free/css/all.min.css">
+  <!-- Ionicons -->
+  <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+  <!-- Theme style -->
+  <link rel="stylesheet" href="../../dist/css/adminlte.min.css">
+  <!-- Google Font: Source Sans Pro -->
+  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+</head>
 
 <aside class="main-sidebar sidebar-dark-primary elevation-4" > 
 
+  <nav class="navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
+    <div class="navbar-brand-wrapper d-flex justify-content-center">
+      <div class="navbar-brand-inner-wrapper d-flex justify-content-between align-items-center w-100">  
+        <a class="navbar-brand brand-logo nav-item" href="../../pages/configuracion/config.html"><img src="../../images/logo.svg" alt="logo"/></a>
+        <a class="navbar-brand brand-logo-mini  " href="../../pages/configuracion/config.html"><img src="../../images/logo-mini.svg" alt="logo"/></a>
+       
+      </div>  
+    </div>
+    <div class="navbar-menu-wrapper d-flex align-items-center justify-content-end">
+      
+      <ul class="navbar-nav navbar-nav-right">
+       
+        <li class="nav-item nav-profile dropdown">
+
+          <a class="nav-link dropdown-toggle" data-toggle="dropdown" id="profileDropdown" >
+            <img src="../../images/faces/face5.jpg" alt="profile"/>
+            <span class="nav-profile-name" id="nombre_apellido"> </span>
+          </a>
+
+          <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="profileDropdown">
+            <a class="dropdown-item">
+              <i class="mdi mdi-settings text-primary"></i>
+              Settings
+            </a>
+            <a href="logout/logout.html" class="dropdown-item">
+              <i class="mdi mdi-logout text-primary"></i>
+              Salir
+            </a>
+          </div>
+        </li>
+      </ul>
+      <button class="navbar-toggler navbar-toggler-right d-lg-none align-self-center" type="button" data-toggle="offcanvas">
+        <span class="mdi mdi-menu"></span>
+      </button>
+    </div>
+  </nav>
 
   <!-- partial -->
   <div class="container-fluid page-body-wrapper" style="padding-top: 0px;">
@@ -15,28 +64,37 @@
     <nav class="sidebar sidebar-offcanvas" id="sidebar">
       <ul class="nav">
         <li class="nav-item">
-          <a class="nav-link" href="../../index.html">
-            <i class="mdi mdi-home menu-icon"></i>
-            <span class="menu-title">Dashboard</span>
+          <a class="nav-link" href="home/home.html">
+            <i class="fas fa-home"></i>
+            <span class="menu-title" style="margin-left: 15px;">Home</span>
           </a>
         </li>
        
         <li class="nav-item">
-          <a class="nav-link" href="../usuarios/Usuarios.html">
-            <i class="mdi mdi-chart-pie menu-icon"></i>
-            <span class="menu-title">Usuarios</span>
+          <a class="nav-link" href="usuarios/Usuarios.html">
+            <i class="fas fa-users"></i>
+            <span class="menu-title" style="margin-left: 15px;">Usuarios</span>
           </a>
         </li>
         <li class="nav-item ">
-          <a class="nav-link" href="../Productos/productos.html">
-            <i class="mdi mdi-grid-large menu-icon"></i>
-            <span class="menu-title">Productos</span>
+          <a class="nav-link" href="Productos/productos.html">
+            <i class="fas fa-shopping-cart"></i>
+            <span class="menu-title" style="margin-left: 15px;">Productos</span>
           </a>
         </li>
         <li class="nav-item ">
-            <a class="nav-link" href="../Clientes/clientes.html">
-              <i class="mdi mdi-grid-large menu-icon"></i>
-              <span class="menu-title">Clientes</span>
+            <a class="nav-link" href="Clientes/clientes.html">
+              <i class="fas fa-user-friends"></i>
+              <span class="menu-title" style="margin-left: 15px;">Clientes</span>
+            </a>
+          </li>
+
+         
+
+          <li class="nav-item ">
+            <a class="nav-link" href="logout/logout.html">
+              <i class="fas fa-sign-out-alt"></i>
+              <span class="menu-title" style="margin-left: 15px;">Salir</span>
             </a>
           </li>
       
@@ -44,4 +102,4 @@
       </ul>
     </nav>
 </aside>
-
+<script src="../contenidos/mostrar_nombre_usu.js"></script>

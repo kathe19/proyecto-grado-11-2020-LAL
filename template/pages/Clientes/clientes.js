@@ -17,6 +17,8 @@ $(document).ready(
                 window.query(sql, [codi]).then(function (result) {
                     fila.remove();
                     console.log('Eliminado correctamente');
+                    toastr.success('Cliente Eliminado ')
+
                 }, function (error) {
                     console.log('Error eliminando...', error);
                 })
@@ -43,12 +45,12 @@ $(document).ready(
                         <td class='td-telefono'>"+ u['telefono'] + "</td>\
                         <td>\
                             <div class='btn-group'>\
-                                <a href='#' class='btn btn-danger btn-sm eliminar'>\
-                                    <i class='fa fa-times'></i>\
-                                </a>\
-                                <a href='#' class='btn btn-info btn-sm editar'>\
-                                    <i class='fa fa-pen'></i>\
-                                </a>\
+                            <a href='#' class='btn btn-info btn-sm editar'>\
+                                <i class='fa fa-user-edit'></i>\
+                             </a>\
+                             <a href='#' class='btn btn-danger btn-sm eliminar'>\
+                                 <i class='fa fa-user-minus'></i>\
+                            </a>\
                             </div>\
                         </td>\
                     <tr>"
@@ -81,6 +83,8 @@ $(document).ready(
 
 
             $('#conten-editar').show('fast');
+            $('#conten-crear').hide();
+
         })
         
         $('#formEditar').submit(function () {
@@ -98,7 +102,7 @@ $(document).ready(
 
             window.query(sql, [a, b, c, d, e, f,fila_editantdo.data('id')]).then(function (result) {
 
-                toastr.success('Cliente creado ')
+                toastr.success('Cliente editado ')
 
 
                 fila_editantdo.find('.td-nombre').text(a);
@@ -109,13 +113,10 @@ $(document).ready(
                 fila_editantdo.find('.td-telefono').text(f);
 
 
-                $('#conten-editar').hide();
-                
-            }, function (error) {
-                console.log('Dato ingresado', error);
-            })
-
-
+        $('#conten-editar').hide();
+        }, function (error) {
+            console.log('Dato ingresado', error);
+        })
             event.preventDefault();
         }) 
 
@@ -128,6 +129,7 @@ $(document).ready(
         $('#btncrear').click(
             function () {
                 $('#conten-crear').show('fast');
+                $('#conten-editar').hide();
                 $('#inputnombre').val('');
                 $('#inputapellidos').val('');
                 $('#inputsexo').val('');
@@ -142,6 +144,8 @@ $(document).ready(
                 $('#btncrear').show();
             }
         )
+
+
         $('#formcrear').submit(function () {
             a = $('#inputnombre').val();
             b = $('#inputapellidos').val();
@@ -154,7 +158,7 @@ $(document).ready(
 
             sql = 'INSERT INTO clientes(nombres,apellidos,sexo,documento,acudiente,telefono)VALUES(?,?,?,?,?,?)';
 
-            window.query(sql, [a, b, c, d,e,f]).then(function (result) {
+            window.query(sql, [a, b, c, d, e, f]).then(function (result) {
                 toastr.success('Cliente creado ')
                 console.log('Dato ingresado', result);
 
@@ -169,19 +173,19 @@ $(document).ready(
                         <td class='td-telefono'>"+ f + "</td>\
                         <td>\
                             <div class='btn-group'>\
-                                <a href='#' class='btn btn-danger btn-sm eliminar'>\
-                                    <i class='fa fa-times'></i>\
-                                </a>\
                                 <a href='#' class='btn btn-info btn-sm editar'>\
-                                    <i class='fa fa-pen'></i>\
+                                    <i class='fa fa-user-edit'></i>\
                                 </a>\
+                                 <a href='#' class='btn btn-danger btn-sm eliminar'>\
+                                     <i class='fa fa-user-minus'></i>\
+                                 </a>\
                             </div>\
                         </td>\
                     <tr>"
                 );
                 $('#conten-crear').hide();
             }, function (error) {
-                console.log('Dato ingresado', error);
+                console.log('Dato no ingresado', error);
             })
 
 

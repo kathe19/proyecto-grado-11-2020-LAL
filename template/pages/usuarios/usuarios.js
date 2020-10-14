@@ -17,6 +17,7 @@ $(document).ready(
                 window.query(sql, [codi]).then(function (result) {
                     fila.remove();
                     console.log('Eliminado correctamente');
+                    toastr.success('Usuario Eliminado ')
                 }, function (error) {
                     console.log('Error eliminando...', error);
                 })
@@ -35,7 +36,8 @@ $(document).ready(
                 $('table tbody').append(
                     "<tr id='fila-"+ u['rowid'] + "'data-id='" + u['rowid'] + "' >\
                         <th>"+ u['rowid'] + "</th>\
-                        <td class='td-nombre'>"+ u['nombres'] + "</td>\
+                        <td class='td-nombre'>"+ u['nombres'] +  "</td>\
+                        <td class='td-apelldos'>"+  u['apellidos'] +  "</td>\
                         <td class='td-sexo'>"+ u['sexo'] + "</td>\
                         <td class='td-fecha_nac'>"+ u['fecha_nac'] + "</td>\
                         <td class='td-tipo'>"+ u['tipo'] + "</td>\
@@ -43,12 +45,12 @@ $(document).ready(
                         <td class='td-usuario'>"+ u['usuario'] + "</td>\
                         <td>\
                             <div class='btn-group'>\
-                                <a href='#' class='btn btn-danger btn-sm eliminar'>\
-                                    <i class='fa fa-times'></i>\
-                                </a>\
                                 <a href='#' class='btn btn-info btn-sm editar'>\
-                                    <i class='fa fa-pen'></i>\
+                                    <i class='fa fa-user-edit'></i>\
                                 </a>\
+                                 <a href='#' class='btn btn-danger btn-sm eliminar'>\
+                                 <i class='fa fa-user-minus'></i>\
+                             </a>\
                             </div>\
                         </td>\
                     <tr>"
@@ -76,6 +78,8 @@ $(document).ready(
             $('#inputusuarioEdit').val(usuario);
 
             $('#conten-editar').show('fast');
+            $('#conten-crear').hide();
+
         })
         
 
@@ -128,6 +132,7 @@ $(document).ready(
                 $('#inputsexo').val('');
                 $('#inputtipo').val('');
                 $('#inputusuario').val('');
+                $('#conten-editar').hide();
             }
         )
         $('#btncancel').click(
@@ -147,20 +152,21 @@ $(document).ready(
             e = $('#inputtipo').val();
             f = $('#inputdocumento').val();
             g = $('#inputusuario').val();
+            h = $('#inputcontraseña').val();
 
 
-            sql = 'INSERT INTO users(nombres,apellidos,sexo,fecha_nac,documento,tipo,usuario)VALUES(?,?,?,?,?,?,?)';
 
-            window.query(sql, [a, b, c, d,e,f,g]).then(function (result) {
+            sql = 'INSERT INTO users(nombres,apellidos,sexo,fecha_nac,tipo,documento,usuario,password)VALUES(?,?,?,?,?,?,?,?)';
 
+            window.query(sql, [a, b, c, d,e,f,g,h]).then(function (result) {
                 toastr.success('Usuario creado ')
-
                 console.log('Dato ingresado', result);
 
                 $('table tbody').append(
                     "<tr id='fila-" + result.insertId + "'data-id='" + result.insertId + "'>\
                         <th>"+ result.insertId + "</th>\
-                        <td class='td-nombre'>"+ a + "</td>\
+                        <td class='td-nombre'>"+ a + " </td>\
+                        <td class='td-apellidos'>"+ b + "</td>\
                         <td class='td-sexo'>"+ c + "</td>\
                         <td class='td-fecha_nac'>"+ d + "</td>\
                         <td class='td-tipo'>"+ e + "</td>\
@@ -168,23 +174,24 @@ $(document).ready(
                         <td class='td-usuario'>"+ g + "</td>\
                         <td>\
                             <div class='btn-group'>\
-                                <a href='#' class='btn btn-danger btn-sm eliminar'>\
-                                    <i class='fa fa-times'></i>\
-                                </a>\
                                 <a href='#' class='btn btn-info btn-sm editar'>\
-                                    <i class='fa fa-pen'></i>\
+                                <i class='fa fa-user-edit'></i>\
                                 </a>\
+                                <a href='#' class='btn btn-danger btn-sm eliminar'>\
+                                <i class='fa fa-user-minus'></i>\
+                                 </a>\
                             </div>\
                         </td>\
                     <tr>"
                 );
                 $('#conten-crear').hide();
+
             }, function (error) {
                 console.log('Dato ingresado', error);
             })
 
 
-            Event.preventDefault();
+            event.preventDefault();
         })
 
     })
