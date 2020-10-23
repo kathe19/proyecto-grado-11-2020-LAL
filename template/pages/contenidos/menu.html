@@ -10,11 +10,9 @@
   <link rel="shortcut icon" href="../../images/k.png" />
 
   <!-- plugins:css -->
-  <link rel="stylesheet" href="../../plusgins/fontawesome-free/css/all.min.css">
   <!-- Ionicons -->
   <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
   <!-- Theme style -->
-  <link rel="stylesheet" href="../../dist/css/adminlte.min.css">
   <!-- Google Font: Source Sans Pro -->
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
 </head>
@@ -29,33 +27,35 @@
        
       </div>  
     </div>
+
     <div class="navbar-menu-wrapper d-flex align-items-center justify-content-end">
       
       <ul class="navbar-nav navbar-nav-right">
-       
-        <li class="nav-item nav-profile dropdown">
+        <li class="nav-item nav-profile dropdown" id="dropdownMenuButton" data-toggle="dropdown">
 
-          <a class="nav-link dropdown-toggle" data-toggle="dropdown" id="profileDropdown" >
+          <a class="nav-link dropdown-toggle">
             <img src="../../images/faces/face5.jpg" alt="profile"/>
-            <span class="nav-profile-name" id="nombre_apellido"> </span>
+            <span class="nav-profile-name" id="nombre_apellido"></span>
           </a>
-
-          <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="profileDropdown">
-            <a class="dropdown-item">
-              <i class="mdi mdi-settings text-primary"></i>
-              Settings
-            </a>
-            <a href="logout/logout.html" class="dropdown-item">
-              <i class="mdi mdi-logout text-primary"></i>
-              Salir
-            </a>
+  
+          <div class="dropdown" class="navbar-nav navbar-nav-right">
+            <div class="dropdown-menu  dropdown-menu-right navbar-dropdown" aria-labelledby="profileDropdown" style="top: 30px;">
+              <a id="config" class="dropdown-item">
+                <i class="mdi mdi-settings text-primary"></i>
+                configuracion
+              </a>
+              <a id="salir" class="dropdown-item">
+                <i class="mdi mdi-logout text-primary"></i>
+                Salir
+              </a>
+            </div>
           </div>
+
         </li>
       </ul>
-      <button class="navbar-toggler navbar-toggler-right d-lg-none align-self-center" type="button" data-toggle="offcanvas">
-        <span class="mdi mdi-menu"></span>
-      </button>
+      
     </div>
+    
   </nav>
 
   <!-- partial -->
@@ -87,8 +87,14 @@
               <i class="fas fa-user-friends"></i>
               <span class="menu-title" style="margin-left: 15px;">Clientes</span>
             </a>
-          </li>
+        </li>
 
+        <li class="nav-item ">
+          <a class="nav-link" href="ventas/ventas.html">
+            <i class="fas fa-store"></i>
+            <span class="menu-title" style="margin-left: 15px;">Ventas</span>
+          </a>
+        </li>
          
 
           <li class="nav-item ">

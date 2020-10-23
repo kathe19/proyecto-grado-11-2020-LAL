@@ -19,3 +19,17 @@ if ("usuario" in localStorage) {
     
     
   }
+
+$('#config').click(
+  function () {
+    window.location.href = '../../pages/configuracion/config.html'
+      
+  }
+)
+
+$('#salir').click(
+  function () {
+    window.location.href = '../../pages/logout/logout.html'
+      
+  }
+)

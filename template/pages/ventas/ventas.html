@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <!-- plugins:css -->
+  <link rel="stylesheet" href="../../vendors/mdi/css/materialdesignicons.min.css">
+  <link rel="stylesheet" href="../../vendors/base/vendor.bundle.base.css">
+  <!-- endinject -->
+  <!-- inject:css -->
+  <link rel="stylesheet" href="../../css/style.css">
+  <link rel="stylesheet" href="../../css/toastr.css">
+  <!-- endinject -->
+  <link rel="stylesheet" href="../../css/fontawesome-free/css/all.min.css">
+  <link rel="shortcut icon" href="../../images/k.png" />
+  <link rel="stylesheet" href="typeahead.css">
+
+
+
+</head>
+
+<body>
+  <div class="container-scroller">
+    <!-- partial:../../partials/_navbar.html -->
+  
+    <!-- partial -->
+    <div class="container-fluid page-body-wrapper">
+
+      <div data-include="../contenidos/menu"></div>
+
+
+      <div class="main-panel">
+        <div class="container-fluid">
+          <div class="content-wrapper">
+            <div class="card card-primary">
+              <div class="card-header" style="padding-top:20px;padding-bottom: 0px;border-bottom-width: 0px;">
+                <h1 class="card-title">Ventas</h1>
+              </div>
+
+              <div class="card-body">
+                <h3 class="card-title">Buscar cliente</h3>
+
+                <form id="formBuscarCliente">
+                  <div class="form-group row">
+                    <div class="col-sm-12" id="buscarNombre">
+                      <input style="width:  100%;" type="text" class="form-control typeahead"  placeholder="Buscar cliente" style="border: 1px solid #00000040;">
+                    </div>
+                  </div>
+                </form>
+                <br>
+                
+                    <h3 class="card-title">Productos 
+                      <span> 
+                        <div class="float-right" style="margin-bottom: 10px;">
+                            <button id="btn-agregar-prod" type="button" class="btn btn-outline-secondary btn-rounded btn-icon">
+                              <i class="fas fa-cart-plus"></i>
+                              </button>
+                        </div> 
+                      </span>
+                    </h3>
+                          
+                  <select class="custom-select" name="selectProductos" id="selectProductos" multiple style="border: 1px solid #00000040;border-radius: 8px;">
+                  
+                  </select>
+
+                <div class="form-group row">
+
+                  <table class="table table-striped" id="tabla-ventas">
+                    <thead >
+                      <tr>
+                        <th scope="col">Nombres</th>
+                        <th scope="col">Precio</th>
+                        <th scope="col">Cantidad</th>
+                        <th scope="col">Total</th>
+                        <th scope="col">Acciones</th>
+                      </tr>
+                    </thead>
+                    <tbody id="listaProductosSeleccionados">
+  
+                    </tbody>
+                  </table>
+                  <table class="table table-striped" id="total-pagar">
+                    <thead >
+                      <tr>
+                        <th class="float-right" scope="col">Total a pagar: <span id="total-todo"></span></th>
+                      </tr>
+                    </thead>
+                  
+                  </table>
+                </div>
+              </div>
+              <!-- /.card-body -->
+            </div>
+
+              
+            
+            </div>
+            <!-- /.card -->
+          </div>
+
+          <!-- /.col (RIGHT) -->
+        </div>
+        <!-- /.row -->
+      </div>
+      <!-- content-wrapper ends -->
+      <!-- partial:../../partials/_footer.html -->
+
+
+      <!-- partial -->
+    </div>
+    <!-- main-panel ends -->
+  </div>
+  <!-- page-body-wrapper ends -->
+  </div>
+  <!-- container-scroller -->
+  <!-- plugins:js -->
+  <script src="../../vendors/base/vendor.bundle.base.js"></script>
+  <!-- endinject -->
+  <script src="../../js/toastr.js"></script>
+  <!-- Plugin js for this page-->
+  <script src="../../vendors/chart.js/Chart.min.js"></script>
+  <!-- End plugin js for this page-->
+  <!-- inject:js -->
+  <script src="../../js/off-canvas.js"></script>
+  <script src="../../js/hoverable-collapse.js"></script>
+  <script src="../../js/template.js"></script>
+  <!-- endinject -->
+  <!-- Custom js for this page-->
+  <script src="../../js/chart.js"></script>
+  <!-- End custom js for this page-->
+
+  <script src="../contenidos/menu.js"></script>
+  <script src="../../js/ConexionServ.js"></script>
+  <script src="ventas.js"></script>
+  <script src="typeahead.js"></script>
+
+
+</body>
+
+</html>
