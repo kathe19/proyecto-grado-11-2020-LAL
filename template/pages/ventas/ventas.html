@@ -82,11 +82,23 @@
                     </tbody>
                   </table>
                   <table class="table table-striped" id="total-pagar">
-                    <thead >
-                      <tr>
-                        <th class="float-right" scope="col">Total a pagar: <span id="total-todo"></span></th>
-                      </tr>
-                    </thead>
+
+                    <form id="formcrear">
+                      <thead >
+                      
+                        <tr id="cambio1">
+                          <th  scope="col">Total a pagar: <span id="total-todo"></span></th>
+                          <th class="float-right" scope="col">Cancela: <input id="vueltas" type="text" min="1"></th>
+                        </tr>
+  
+                        <tr >
+                          <th  scope="col">Cambio: $<span id="total_cambio"></span></th>
+                          <th class="float-right"> <button type="submit" class="btn btn-success" >Confirmar</button> </th>
+                        </tr>
+                     
+                      </thead>
+                    </form>
+                    
                   
                   </table>
                 </div>

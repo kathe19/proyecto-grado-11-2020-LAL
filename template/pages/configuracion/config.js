@@ -3,7 +3,7 @@ $(document).ready(
     function () {
 
         var USER = JSON.parse(localStorage.usuario);
-        $(function () {
+
             const nombres = USER.nombres;
             const apellidos = USER.apellidos;
             const sexo = USER.sexo;
@@ -21,7 +21,7 @@ $(document).ready(
             $('#inputtipouser').val(tipo);
             $('#inputusuariouser').val(usuario);
             $('#inputcontraseñauser').val(password);
-        })
+
         
         $('#formEditarUser').submit(function () {
 

@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <!-- plugins:css -->
+  <link rel="stylesheet" href="../../vendors/mdi/css/materialdesignicons.min.css">
+  <link rel="stylesheet" href="../../vendors/base/vendor.bundle.base.css">
+  <!-- endinject -->
+  <!-- inject:css -->
+  <link rel="stylesheet" href="../../css/style.css">
+  <link rel="stylesheet" href="../../css/toastr.css">
+  <!-- endinject -->
+  <link rel="stylesheet" href="../../css/fontawesome-free/css/all.min.css">
+  <link rel="shortcut icon" href="../../images/k.png" />
+
+
+
+</head>
+
+<body>
+  <div class="container-scroller">
+    <!-- partial:../../partials/_navbar.html -->
+  
+    <!-- partial -->
+    <div class="container-fluid page-body-wrapper">
+
+      <div data-include="../contenidos/menu"></div>
+
+
+      <div class="main-panel">
+        <div class="container-fluid">
+          <div class="content-wrapper">
+            <div class="card card-primary">
+              <div class="card-header" style="padding-top:20px;padding-bottom: 0px;border-bottom-width: 0px;">
+                <h1 class="card-title">Informes</h1>
+              </div>
+    
+              <div class="template-demo" style="margin-left: 20px;margin-bottom: 20px;">
+                
+                <button id="abrir_clientes" type="button" class="btn btn-primary">Clientes</button>
+                <button id="abrir_productos" type="button" class="btn btn-success">Productos</button>
+                <button id="abrir_ventas" type="button" class="btn btn-danger">Ventas</button>
+
+                <div style="margin-top: 20px;"> 
+                  <div class="table-responsive table--no-card m-b-30" id="clientes">
+              
+                    <table  class="table table-borderless table-striped table-earning">
+                      <thead>
+                        <tr>
+                          <th>Nombre</th>
+                          <th>Apellidos</th>
+                          <th>Sexo</th>
+                          <th>Documento</th>
+                          <th>Acudiente</th>
+                          <th>Telefono</th>
+                        </tr>
+                      </thead>
+                        <tbody id="clientes_datos">
+                        
+                         
+                        </tbody>
+                      
+                    </table>
+                  </div>
+  
+                  <div class="table-responsive table--no-card m-b-30" id="ventas">
+                
+                    <table  class="table table-borderless table-striped table-earning">
+                      <thead>
+                        <tr>
+                          <th>Usuario_id</th>
+                          <th>Fecha</th>
+                          <th>Cliente id</th>
+                          <th>Descripcion</th>
+                          <th>Pago</th>
+                        </tr>
+                      </thead>
+                        <tbody id="ventas_datos">
+                        
+                         
+                        </tbody>
+                      
+                    </table>
+                  </div>
+  
+                  <div class="table-responsive table--no-card m-b-30" id="productos">
+                
+                    <table  class="table table-borderless table-striped table-earning">
+                      <thead>
+                        <tr>
+                          <th>Nombre</th>
+                          <th>Abreviatura</th>
+                          <th>Precio</th>
+                          <th>Costo</th>
+                          <th>Descripcion</th>
+                          <th>Proveedor</th>
+                          <th>Celular Proveedor</th>
+                        </tr>
+                      </thead>
+                        <tbody id="productos_datos">
+                        
+                         
+                        </tbody>
+                      
+                    </table>
+                  </div>
+                </div>
+               
+              </div>
+
+              
+              
+            </div>
+
+
+            
+            </div>
+            <!-- /.card -->
+          </div>
+    
+          <!-- /.col (RIGHT) -->
+        </div>
+        <!-- /.row -->
+      </div>
+      <!-- content-wrapper ends -->
+      <!-- partial:../../partials/_footer.html -->
+
+
+      <!-- partial -->
+    </div>
+    <!-- main-panel ends -->
+  </div>
+  <!-- page-body-wrapper ends -->
+  </div>
+  <!-- container-scroller -->
+  <!-- plugins:js -->
+  <script src="../../vendors/base/vendor.bundle.base.js"></script>
+  <!-- endinject -->
+  <script src="../../js/toastr.js"></script>
+  <!-- Plugin js for this page-->
+  <script src="../../vendors/chart.js/Chart.min.js"></script>
+  <!-- End plugin js for this page-->
+  <!-- inject:js -->
+  <script src="../../js/off-canvas.js"></script>
+  <script src="../../js/hoverable-collapse.js"></script>
+  <script src="../../js/template.js"></script>
+  <!-- endinject -->
+  <!-- Custom js for this page-->
+  <script src="../../js/chart.js"></script>
+  <!-- End custom js for this page-->
+
+  <script src="../contenidos/menu.js"></script>
+  <script src="../../js/ConexionServ.js"></script>
+  <script src="informes.js"></script>
+
+
+</body>
+
+</html>
